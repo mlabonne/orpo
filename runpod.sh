@@ -30,3 +30,8 @@ cd */
 # Upload model
 huggingface-cli login --token $TOKEN
 huggingface-cli upload $NEW_MODEL . .
+
+# Kill pod
+if [ "$DEBUG" == "False" ]; then
+    runpodctl remove pod $RUNPOD_POD_ID
+fi
